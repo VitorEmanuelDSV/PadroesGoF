@@ -1,4 +1,4 @@
-package entities;
+package teaching;
 
 public class Professor {
 }

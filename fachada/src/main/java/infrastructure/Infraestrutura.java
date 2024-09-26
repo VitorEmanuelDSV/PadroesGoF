@@ -1,4 +1,4 @@
-package entities;
+package infrastructure;
 
 public class Infraestrutura {
 }

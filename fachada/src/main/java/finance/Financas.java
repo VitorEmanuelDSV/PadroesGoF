@@ -1,4 +1,4 @@
-package entities;
+package finance;
 
 public class Financas {
 }

@@ -1,4 +1,4 @@
-package entities;
+package storage;
 
 public class Almoxarifado {
 }
