@@ -24,6 +24,13 @@ public class Main {
 
         System.out.println(sig.admin.infoGetReunioes());
 
+        //storage
+        System.out.println("#STORAGE");
+        System.out.println("-ESTOQUE");
+        sig.estoque.infoGetEstoque();
+
+        //infra
+        sig.infrastructure.infoGetInfrastructure();
     }
 
 }
