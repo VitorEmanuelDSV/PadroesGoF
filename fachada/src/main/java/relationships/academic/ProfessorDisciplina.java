@@ -19,16 +19,40 @@ public class ProfessorDisciplina {
         professorDisciplinas.add(new ProfessorDisciplina(professor, disciplina));
     }
 
-    public String getDisciplinasByProfessor(int matricula) {
-        ArrayList<Disciplina> disciplinasAssociadas = new ArrayList<>();
+    public String getDisciplinasByMatricula(int matricula) {
+        StringBuilder disciplinasAssociadas = new StringBuilder();
+
         for (ProfessorDisciplina pd : professorDisciplinas) {
             if (pd.getProfessor().getMatricula() == matricula) {
-                disciplinasAssociadas.add(pd.getDisciplina());
+                disciplinasAssociadas.append(pd.getDisciplina().getNome());
             }
         }
-        return disciplinasAssociadas;
+
+        return disciplinasAssociadas.toString();
     }
 
+    public String getDisciplinasProfessor(Professor professor) {
+        StringBuilder disciplinasAssociadas = new StringBuilder();
+
+        disciplinasAssociadas.append("O professor ")
+                .append(professor.getDados().getNome())
+                .append(" ministra são: ")
+                .append(getDisciplinasByMatricula(professor.getMatricula()));
+
+        return disciplinasAssociadas.toString();
+    }
+
+    public String tempoDeCasa (Professor professor) {
+        StringBuilder solucao = new StringBuilder();
+
+        solucao.append("O professor ")
+                .append(professor.getDados().getNome())
+                .append(" tem ")
+                .append(professor.getTempoDeCasa())
+                .append(" anos que ministra na universidade estadual da Paraiba.");
+
+        return solucao.toString();
+    }
     //Getters and Setters
 
     public Professor getProfessor() {

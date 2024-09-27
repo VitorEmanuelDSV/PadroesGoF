@@ -4,6 +4,7 @@ import relationships.academic.Historico;
 import relationships.academic.RDM;
 
 public class Aluno {
+    private int matricula;
     private Dados dados;
     private Historico historico;
     private RDM rdm;
@@ -39,4 +40,13 @@ public class Aluno {
     public void setRdm(RDM rdm) {
         this.rdm = rdm;
     }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
 }

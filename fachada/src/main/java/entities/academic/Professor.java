@@ -1,6 +1,7 @@
 package entities.academic;
 
 public class Professor {
+    private int matricula;
     private Dados dados;
     private float tempoDeCasa;
 
@@ -24,4 +25,13 @@ public class Professor {
     public void setTempoDeCasa(float tempoDeCasa) {
         this.tempoDeCasa = tempoDeCasa;
     }
+
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
 }
