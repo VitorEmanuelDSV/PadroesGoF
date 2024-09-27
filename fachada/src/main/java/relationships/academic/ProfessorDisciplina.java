@@ -18,4 +18,22 @@ public class ProfessorDisciplina {
     public void associarProfessorDisciplina(Professor professor, Disciplina disciplina) {
         professorDisciplinas.add(new ProfessorDisciplina(professor, disciplina));
     }
+
+    public String getDisciplinas() {
+        StringBuilder disciplinas = new StringBuilder();
+
+        for (Disciplina disciplina : professorDisciplinas){
+            
+        }
+    }
+
+    public String getDisciplinasProfessor() {
+        StringBuilder disciplinasProfessor = new StringBuilder();
+
+        disciplinasProfessor.append("As disciplinas que ")
+        .append(this.professor.getDados().getNome())
+        .append(" ministra são: ");
+
+        return disciplinasProfessor;
+    }
 }

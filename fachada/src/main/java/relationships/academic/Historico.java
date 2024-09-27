@@ -8,5 +8,6 @@ public class Historico {
 
     public Historico() {
         this.disciplinas.add(new Disciplina(1, "MAP", "12M"));
+        this.disciplinas.add(new Disciplina(2, "ES1", "34M"));
     }
 }

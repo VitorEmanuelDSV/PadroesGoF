@@ -1,13 +1,17 @@
 package relationships.academic;
 
-import entities.academic.*;
-
 import java.util.ArrayList;
+
+import entities.academic.Aluno;
 
 public class AlunoHistorico {
     private Aluno aluno;
     private Historico historico;
-    private ArrayList<AlunoHistorico> alunoHistorico = new ArrayList<AlunoHistorico>();
+    private ArrayList<AlunoHistorico> alunoHistorico;
 
-    public AlunoHistorico() {}
+    public AlunoHistorico(Aluno aluno, Historico historico) {
+        this.aluno = aluno;
+        this.historico = historico;
+        alunoHistorico = new ArrayList<AlunoHistorico>();
+    }
 }
