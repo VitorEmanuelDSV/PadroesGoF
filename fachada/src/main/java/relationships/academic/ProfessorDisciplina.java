@@ -19,21 +19,32 @@ public class ProfessorDisciplina {
         professorDisciplinas.add(new ProfessorDisciplina(professor, disciplina));
     }
 
-    public String getDisciplinas() {
-        StringBuilder disciplinas = new StringBuilder();
-
-        for (Disciplina disciplina : professorDisciplinas){
-            
+    public String getDisciplinasByProfessor(int matricula) {
+        ArrayList<Disciplina> disciplinasAssociadas = new ArrayList<>();
+        for (ProfessorDisciplina pd : professorDisciplinas) {
+            if (pd.getProfessor().getMatricula() == matricula) {
+                disciplinasAssociadas.add(pd.getDisciplina());
+            }
         }
+        return disciplinasAssociadas;
     }
 
-    public String getDisciplinasProfessor() {
-        StringBuilder disciplinasProfessor = new StringBuilder();
+    //Getters and Setters
 
-        disciplinasProfessor.append("As disciplinas que ")
-        .append(this.professor.getDados().getNome())
-        .append(" ministra são: ");
-
-        return disciplinasProfessor;
+    public Professor getProfessor() {
+        return professor;
     }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
+    }
+
 }
