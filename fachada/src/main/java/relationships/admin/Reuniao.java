@@ -11,8 +11,10 @@ public class Reuniao {
     private String data;
     private String horario;
     private String assunto;
+    private int id;
 
-    public Reuniao(ArrayList<User> users, Dados dados, String data, String horario, String assunto) {
+    public Reuniao(int id, ArrayList<User> users, Dados dados, String data, String horario, String assunto) {
+        this.id = id;
         this.users = users;
         this.data = data;
         this.horario = horario;
@@ -52,4 +54,11 @@ public class Reuniao {
         this.assunto = assunto;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

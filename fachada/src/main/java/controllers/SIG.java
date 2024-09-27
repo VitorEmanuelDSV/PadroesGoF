@@ -1,6 +1,7 @@
 package controllers;
 
 import controllers.admin.Admin;
+import controllers.finance.Finance;
 import controllers.infrastructure.Infrastructure;
 import controllers.storage.Estoque;
 import entities.admin.User;
@@ -16,6 +17,7 @@ public class SIG {
     public Admin admin;
     public Estoque estoque;
     public Infrastructure infrastructure;
+    public Finance finance;
 
     private static ArrayList<User> users = new ArrayList<>();
 
@@ -23,6 +25,7 @@ public class SIG {
         this.admin = admin;
         this.estoque = new Estoque();
         this.infrastructure = new Infrastructure();
+        this.finance = new Finance();
     }
 
 
