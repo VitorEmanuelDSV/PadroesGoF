@@ -3,9 +3,9 @@ package entities.academic;
 public class Professor {
     private int matricula;
     private Dados dados;
-    private float tempoDeCasa;
+    private double tempoDeCasa;
 
-    public Professor(Dados dados, float tempoDeCasa) {
+    public Professor(Dados dados, double tempoDeCasa) {
         this.dados = dados;
         this.tempoDeCasa = tempoDeCasa;
     }
@@ -18,11 +18,11 @@ public class Professor {
         this.dados = dados;
     }
 
-    public float getTempoDeCasa() {
+    public double getTempoDeCasa() {
         return tempoDeCasa;
     }
 
-    public void setTempoDeCasa(float tempoDeCasa) {
+    public void setTempoDeCasa(double tempoDeCasa) {
         this.tempoDeCasa = tempoDeCasa;
     }
 

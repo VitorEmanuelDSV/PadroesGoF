@@ -1,13 +1,12 @@
 package controllers;
 
+import controllers.academic.Academic;
 import controllers.admin.Admin;
 import controllers.finance.Finance;
 import controllers.infrastructure.Infrastructure;
 import controllers.storage.Estoque;
 import entities.admin.User;
 import entities.admin.roles.Papel;
-import entities.admin.*;
-import entities.admin.roles.*;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
@@ -18,6 +17,7 @@ public class SIG {
     public Estoque estoque;
     public Infrastructure infrastructure;
     public Finance finance;
+    public Academic academic;
 
     private static ArrayList<User> users = new ArrayList<>();
 
@@ -26,6 +26,7 @@ public class SIG {
         this.estoque = new Estoque();
         this.infrastructure = new Infrastructure();
         this.finance = new Finance();
+        this.academic = new Academic();
     }
 
 

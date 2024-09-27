@@ -36,22 +36,22 @@ public class ProfessorDisciplina {
 
         disciplinasAssociadas.append("O professor ")
                 .append(professor.getDados().getNome())
-                .append(" ministra são: ")
+                .append(" ministra as disciplinas: ")
                 .append(getDisciplinasByMatricula(professor.getMatricula()));
 
         return disciplinasAssociadas.toString();
     }
 
     public String tempoDeCasa (Professor professor) {
-        StringBuilder solucao = new StringBuilder();
+        StringBuilder tempo = new StringBuilder();
 
-        solucao.append("O professor ")
+        tempo.append("O professor ")
                 .append(professor.getDados().getNome())
                 .append(" tem ")
                 .append(professor.getTempoDeCasa())
                 .append(" anos que ministra na universidade estadual da Paraiba.");
 
-        return solucao.toString();
+        return tempo.toString();
     }
     //Getters and Setters
 

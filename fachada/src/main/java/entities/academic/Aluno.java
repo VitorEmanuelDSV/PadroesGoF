@@ -9,7 +9,8 @@ public class Aluno {
     private Historico historico;
     private RDM rdm;
 
-    public Aluno(Dados dados, Historico historico, RDM rdm) {
+    public Aluno(int matricula, Dados dados, Historico historico, RDM rdm) {
+        this.matricula = matricula;
         this.dados = dados;
         this.historico = historico;
         this.rdm = rdm;
