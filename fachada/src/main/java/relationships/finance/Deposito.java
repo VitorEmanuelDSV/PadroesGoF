@@ -1,4 +1,4 @@
 package relationships.finance;
 
-public class Pagamento {
+public class Deposito {
 }

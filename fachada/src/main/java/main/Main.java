@@ -12,24 +12,34 @@ public class Main {
         sig.createUser("Gabriel", Roles.createAdmin());
         sig.createUser("Caleb", Roles.createDiretor());
 
-        System.out.println("# ADMINISTRATIVO: ");
+        // Administrativo
+        System.out.println("\n# ADMINISTRATIVO: ");
         System.out.println("- Entrevistas: ");
-        sig.admin.createEntrevista(0, "Vitor", "0342945825", "vitin@gmail.com", "26/09/2024", "03:00PM", "virar cliente");
-        sig.admin.createEntrevista(0, "Luiz", "34434334", "luizin@gmail.com", "26/09/2024", "04:00PM", "auuu");
+        sig.admin.createEntrevista(0, "Vitor", "0342945825", "vitin@gmail.com", "26/09/2024", "03:00PM", "Testar o sistema");
+        sig.admin.createEntrevista(0, "Luiz", "34434334", "luizin@gmail.com", "26/09/2024", "04:00PM", "Contratação");
 
-        System.out.println(sig.admin.infoGetEntrevistas());
+        System.out.print(sig.admin.infoGetEntrevistas());
 
         System.out.println("- Reuniões");
         sig.admin.mockReuniao();
 
-        System.out.println(sig.admin.infoGetReunioes());
+        System.out.print(sig.admin.infoGetReunioes());
 
-        //storage
-        System.out.println("#STORAGE");
-        System.out.println("-ESTOQUE");
+        // Finance
+        System.out.println("# FINANCEIRO: ");
+        System.out.println("- Balanço de Contas: ");
+        System.out.println(sig.finance.getBalancoDeContas() + "\n");
+
+        System.out.println("- Folha de Pagamento: ");
+        System.out.println(sig.finance.getFolhaDePagamento() + "\n");
+
+
+        // Storage
+        System.out.println("# STORAGE");
+        System.out.println("- Estoque");
         sig.estoque.infoGetEstoque();
 
-        //infra
+        // Infraestrutura
         sig.infrastructure.infoGetInfrastructure();
     }
 

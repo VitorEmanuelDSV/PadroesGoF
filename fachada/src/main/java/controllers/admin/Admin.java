@@ -7,17 +7,18 @@ import relationships.admin.Entrevista;
 import relationships.admin.Reuniao;
 
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 public class Admin {
 
-    private ArrayList<Entrevista> entrevistas = new ArrayList<>();
-    private ArrayList<Reuniao> reunioes = new ArrayList<>();
+    private static ArrayList<Entrevista> entrevistas = new ArrayList<>();
+    private static ArrayList<Reuniao> reunioes = new ArrayList<>();
 
     public Admin() {}
 
     public boolean createEntrevista(int user_id, String nome, String cpf, String email, String data, String horario, String assunto) {
 
-        this.entrevistas.add(new Entrevista(
+        entrevistas.add(new Entrevista(
                 entrevistas.size(),
                 SIG.getUserById(user_id),
                 new Dados(nome, cpf, email),
@@ -30,7 +31,7 @@ public class Admin {
     }
 
     public boolean createReuniao(int[] user_ids, String nome, String cpf, String email, String data, String horario, String assunto) {
-        this.reunioes.add(new Reuniao(
+        reunioes.add(new Reuniao(
                 reunioes.size(),
                 SIG.getUsersById(user_ids),
                 new Dados(nome, cpf, email),
@@ -42,12 +43,32 @@ public class Admin {
         return true;
     }
 
+    public static Entrevista getEntrevistaById(int id) {
+        for(Entrevista entrevista : entrevistas) {
+            if(entrevista.getId() == id) {
+                return entrevista;
+            }
+        }
+
+        throw new NoSuchElementException("Entrevista não encontrada");
+    }
+
+    public static Reuniao getReuniaoById(int id) {
+        for(Reuniao reuniao : reunioes) {
+            if(reuniao.getId() == id) {
+                return reuniao;
+            }
+        }
+
+        throw new NoSuchElementException("Reunião não encontrada");
+    }
+
     // INFO
     public String infoGetEntrevistas() {
-        StringBuilder entrevistas = new StringBuilder();
+        StringBuilder infoEntrevistas = new StringBuilder();
 
-        for(Entrevista entrevista : this.entrevistas) {
-            entrevistas.append("Entrevista de ID: ")
+        for(Entrevista entrevista : entrevistas) {
+            infoEntrevistas.append("Entrevista de ID: ")
                     .append(entrevista.getId())
                     .append("\nResponsável: ")
                     .append(entrevista.getUser().getNome())
@@ -60,13 +81,13 @@ public class Admin {
             ;
         }
 
-        return entrevistas.toString();
+        return infoEntrevistas.toString();
     }
 
     public String infoGetReunioes () {
-        StringBuilder reunioes = new StringBuilder();
+        StringBuilder infoReunioes = new StringBuilder();
 
-        for(Reuniao reuniao : this.reunioes) {
+        for(Reuniao reuniao : reunioes) {
 
             StringBuilder users = new StringBuilder();
 
@@ -76,7 +97,7 @@ public class Admin {
 
             users.deleteCharAt(users.length() - 2);
 
-            reunioes.append("Reunião de ID: ")
+            infoReunioes.append("Reunião de ID: ")
                     .append(reuniao.getId())
                     .append("\nParticipantes: ")
                     .append(users)
@@ -87,7 +108,7 @@ public class Admin {
             ;
         }
 
-        return reunioes.toString();
+        return infoReunioes.toString();
     }
 
     // Getters and Setters
