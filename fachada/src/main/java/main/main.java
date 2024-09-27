@@ -21,6 +21,8 @@ public class main {
         System.out.println("-ESTOQUE");
         sig.estoque.infoGetEstoque();
 
+        //infra
+        sig.infrastructure.infoGetInfrastructure();
     }
 
 }
