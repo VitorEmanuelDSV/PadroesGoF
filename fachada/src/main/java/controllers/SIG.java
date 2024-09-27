@@ -4,6 +4,8 @@ import controllers.admin.Admin;
 import controllers.storage.Estoque;
 import entities.admin.User;
 import entities.admin.roles.Papel;
+import entities.admin.*;
+import entities.admin.roles.*;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
