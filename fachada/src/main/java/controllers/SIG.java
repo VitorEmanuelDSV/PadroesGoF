@@ -1,6 +1,7 @@
 package controllers;
 
 import controllers.admin.Admin;
+import controllers.storage.Estoque;
 import entities.admin.User;
 import entities.admin.roles.Papel;
 
@@ -10,12 +11,15 @@ import java.util.NoSuchElementException;
 public class SIG {
 
     public Admin admin;
+    public Estoque estoque;
 
     private static ArrayList<User> users = new ArrayList<>();
 
     public SIG (Admin admin) {
         this.admin = admin;
+        this.estoque = new Estoque();
     }
+
 
     public boolean createUser(String nome, Papel permissao) {
         users.add(

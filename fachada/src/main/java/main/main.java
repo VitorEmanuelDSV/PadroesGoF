@@ -16,6 +16,11 @@ public class main {
 
         sig.admin.infoGetEntrevistas();
 
+        //storage
+        System.out.println("#STORAGE");
+        System.out.println("-ESTOQUE");
+        sig.estoque.infoGetEstoque();
+
     }
 
 }
