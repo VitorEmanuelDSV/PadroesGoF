@@ -6,8 +6,25 @@ import entities.academic.*;
 public class Historico {
     private ArrayList<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
-    public Historico() {
-        this.disciplinas.add(new Disciplina(1, "MAP", "12M"));
-        this.disciplinas.add(new Disciplina(2, "ES1", "34M"));
+    public Historico() {}
+
+    public String getHistorico() {
+        StringBuilder historico = new StringBuilder();
+
+        for (Disciplina disciplina : disciplinas) {
+            historico.append(disciplina.getNome()).append(", ");
+        }
+
+        historico.deleteCharAt(historico.length() - 2);
+
+        return historico.toString();
+    }
+
+    public void addDisciplina(Disciplina disciplina) {
+        disciplinas.add(disciplina);
+    }
+
+    public void removeDisciplina(Disciplina disciplina) {
+        disciplinas.remove(disciplina);
     }
 }

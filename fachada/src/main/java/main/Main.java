@@ -41,6 +41,13 @@ public class Main {
 
         // Infraestrutura
         sig.infrastructure.infoGetInfrastructure();
+
+        // Academic
+        sig.academic.printDisciplinasProfessor();
+        sig.academic.printTempoDeCasa();
+
+        sig.academic.printHistoricoAluno();
+        sig.academic.printRDM();
     }
 
 }

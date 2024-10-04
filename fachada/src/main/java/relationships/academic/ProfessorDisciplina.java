@@ -19,20 +19,56 @@ public class ProfessorDisciplina {
         professorDisciplinas.add(new ProfessorDisciplina(professor, disciplina));
     }
 
-    public String getDisciplinas() {
-        StringBuilder disciplinas = new StringBuilder();
+    public String getDisciplinasByMatricula(int matricula) {
+        StringBuilder disciplinasAssociadas = new StringBuilder();
 
+        for (ProfessorDisciplina pd : professorDisciplinas) {
+            if (pd.getProfessor().getMatricula() == matricula) {
+                disciplinasAssociadas.append(pd.getDisciplina().getNome());
+            }
+        }
 
-        return null;
+        return disciplinasAssociadas.toString();
     }
 
-    public String getDisciplinasProfessor() {
-        StringBuilder disciplinasProfessor = new StringBuilder();
+    public String getDisciplinasProfessor(Professor professor) {
+        StringBuilder disciplinasAssociadas = new StringBuilder();
 
-        disciplinasProfessor.append("As disciplinas que ")
-        .append(this.professor.getDados().getNome())
-        .append(" ministra são: ");
+        disciplinasAssociadas.append("O professor ")
+                .append(professor.getDados().getNome())
+                .append(" ministra as disciplinas: ")
+                .append(getDisciplinasByMatricula(professor.getMatricula()));
 
-        return null;
+        return disciplinasAssociadas.toString();
     }
+
+    public String tempoDeCasa (Professor professor) {
+        StringBuilder tempo = new StringBuilder();
+
+        tempo.append("O professor ")
+                .append(professor.getDados().getNome())
+                .append(" tem ")
+                .append(professor.getTempoDeCasa())
+                .append(" anos que ministra na universidade estadual da Paraiba.");
+
+        return tempo.toString();
+    }
+    //Getters and Setters
+
+    public Professor getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
+    }
+
 }
