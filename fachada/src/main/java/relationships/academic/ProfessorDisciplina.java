@@ -22,9 +22,8 @@ public class ProfessorDisciplina {
     public String getDisciplinas() {
         StringBuilder disciplinas = new StringBuilder();
 
-        for (Disciplina disciplina : professorDisciplinas){
-            
-        }
+
+        return null;
     }
 
     public String getDisciplinasProfessor() {
@@ -34,6 +33,6 @@ public class ProfessorDisciplina {
         .append(this.professor.getDados().getNome())
         .append(" ministra são: ");
 
-        return disciplinasProfessor;
+        return null;
     }
 }
