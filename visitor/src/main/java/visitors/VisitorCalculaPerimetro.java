@@ -22,7 +22,13 @@ public class VisitorCalculaPerimetro implements VisitorIF {
 
     @Override
     public double visitaTriangulo(Triangulo t) {
-        return 0;
+        double perimetro = (t.getLadoBase() + t.getLado2() + t.getLado2());
+
+        this.perimetro = perimetro;
+
+        System.out.printf("Perimetro: %.2f u.m\n", perimetro);
+
+        return perimetro;
     }
 
     @Override
@@ -38,7 +44,13 @@ public class VisitorCalculaPerimetro implements VisitorIF {
 
     @Override
     public double visitaTrapezio(Trapezio t) {
-        return 0;
+        double perimetro = (t.getBaseMaior() + t.getBaseMenor() + t.getLado2() + t.getLado2());
+
+        this.perimetro = perimetro;
+
+        System.out.printf("Perimetro: %.2f u.m\n", perimetro);
+
+        return perimetro;
     }
 
     // Getters

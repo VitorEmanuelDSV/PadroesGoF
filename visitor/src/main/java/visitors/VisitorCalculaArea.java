@@ -22,7 +22,13 @@ public class VisitorCalculaArea implements VisitorIF {
 
     @Override
     public double visitaTriangulo(Triangulo t) {
-        return 0;
+        double area = ((t.getAltura() * t.getLadoBase()) / 2);
+
+        this.area = area;
+
+        System.out.printf("Área: %.2f u.m²\n", area);
+
+        return area;
     }
 
     @Override
@@ -38,7 +44,13 @@ public class VisitorCalculaArea implements VisitorIF {
 
     @Override
     public double visitaTrapezio(Trapezio t) {
-        return 0;
+        double area = (((t.getBaseMaior() + t.getBaseMenor()) * t.getAltura()) / 2);
+
+        this.area = area;
+
+        System.out.printf("Área: %.2f u.m²\n", area);
+
+        return area;
     }
 
     // Getters

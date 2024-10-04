@@ -1,7 +1,11 @@
 package main;
 
+import controllers.CreatorFiguras;
+import controllers.CreatorVisitors;
 import entities.Circulo;
 import entities.Retangulo;
+import entities.Trapezio;
+import entities.Triangulo;
 import visitors.*;
 
 public class MainV {
@@ -9,13 +13,13 @@ public class MainV {
     public static void main(String[] args) {
 
         // MAIN
-        VisitorIF visitorCA = new VisitorCalculaArea();
-        VisitorIF visitorPE = new VisitorCalculaPerimetro();
-        VisitorIF visitorD = new VisitorDesenha();
-        VisitorIF visitorMA = new VisitorMaximizaArea();
+        VisitorIF visitorCA = CreatorVisitors.createVisitorCA();
+        VisitorIF visitorPE = CreatorVisitors.createVisitorPE();
+        VisitorIF visitorDE = CreatorVisitors.createVisitorDE();
+        VisitorIF visitorMA = CreatorVisitors.createVisitorMA();
 
         // Círculo
-        Circulo circulo = new Circulo(15);
+        Circulo circulo = CreatorFiguras.createCirculo(3);
 
         System.out.print(
             "- DADOS DO CÍRCULO: \n" +
@@ -29,7 +33,7 @@ public class MainV {
         System.out.println("\n");
 
         // Retângulo
-        Retangulo retangulo = new Retangulo(10, 5, 10, 2, 5);
+        Retangulo retangulo = CreatorFiguras.createRetangulo(10, 5, 10, 2, 5);
 
         System.out.println(
             "- DADOS DO RETÂNGULO: \n" +
@@ -47,14 +51,54 @@ public class MainV {
         System.out.println("\n");
 
         // Trapézio
+        Trapezio trapezio = CreatorFiguras.createTrapezio(10, 5, 3, 5, 5);
+
+        System.out.println(
+            "- DADOS DO TRAPÉZIO: \n" +
+                "Base Maior: " + trapezio.getBaseMaior() + " u.m\n" +
+                "Base Menor: " + trapezio.getBaseMenor() + " u.m\n" +
+                "Lado 1: " + trapezio.getLado1() + " u.m\n" +
+                "Lado 2: " + trapezio.getLado2() + " u.m\n" +
+                "Altura: " + trapezio.getAltura() + " u.m"
+        );
+
+        trapezio.aceitaVisita(visitorCA);
+        trapezio.aceitaVisita(visitorPE);
+        trapezio.aceitaVisita(visitorMA);
+
+        System.out.println("\n");
 
         // Triângulo
+        Triangulo triangulo = CreatorFiguras.createTriangulo(5, 3, 3, 3);
 
+        System.out.println(
+            "- DADOS DO TRIÂNGULO: \n" +
+                "Lado Base: " + triangulo.getLadoBase() + " u.m\n" +
+                "Lado 2: " + triangulo.getLado2() + " u.m\n" +
+                "Lado 3: " + triangulo.getLado3() + " u.m\n" +
+                "Altura: " + triangulo.getAltura() + " u.m"
+        );
+
+        triangulo.aceitaVisita(visitorCA);
+        triangulo.aceitaVisita(visitorPE);
+        triangulo.aceitaVisita(visitorMA);
 
         System.out.println("\n");
 
         // DESENHOS
-//        circulo.aceitaVisita(visitorD);
+        System.out.println("- DESENHOS: \n");
+
+        System.out.println("CÍRCULO: ");
+        circulo.aceitaVisita(visitorDE);
+
+        System.out.println("\nRETÂNGULO: ");
+        retangulo.aceitaVisita(visitorDE);
+
+        System.out.println("\nTRAPÉZIO: ");
+        trapezio.aceitaVisita(visitorDE);
+
+        System.out.println("\nTRIÂNGULO: ");
+        triangulo.aceitaVisita(visitorDE);
 
 
     }

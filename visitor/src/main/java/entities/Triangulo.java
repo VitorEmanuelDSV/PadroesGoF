@@ -1,11 +1,14 @@
 package entities;
 
-public class Triangulo {
+import concrete.ElementoConcretoIF;
+import visitors.VisitorIF;
 
-    private int ladoBase, lado2, lado3;
-    private int altura;
+public class Triangulo implements ElementoConcretoIF {
 
-    public Triangulo(int ladoBase, int lado2, int lado3, int altura) {
+    private double ladoBase, lado2, lado3;
+    private double altura;
+
+    public Triangulo(double ladoBase, double lado2, double lado3, double altura) {
 
         if (
             ladoBase <= 0 ||
@@ -26,8 +29,12 @@ public class Triangulo {
         this.altura = altura;
     }
 
+    public void aceitaVisita(VisitorIF v) {
+        v.visitaTriangulo(this);
+    }
+
     // Getters and Setters
-    public int getLadoBase() {
+    public double getLadoBase() {
         return ladoBase;
     }
 
@@ -35,7 +42,7 @@ public class Triangulo {
         this.ladoBase = ladoBase;
     }
 
-    public int getLado2() {
+    public double getLado2() {
         return lado2;
     }
 
@@ -43,7 +50,7 @@ public class Triangulo {
         this.lado2 = lado2;
     }
 
-    public int getLado3() {
+    public double getLado3() {
         return lado3;
     }
 
@@ -51,7 +58,7 @@ public class Triangulo {
         this.lado3 = lado3;
     }
 
-    public int getAltura() {
+    public double getAltura() {
         return altura;
     }
 

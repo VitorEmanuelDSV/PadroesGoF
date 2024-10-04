@@ -23,6 +23,14 @@ public class VisitorMaximizaArea implements VisitorIF {
 
     @Override
     public double visitaTriangulo(Triangulo t) {
+
+        System.out.print(
+            "Lado Base duplicado: " + (t.getLadoBase() * 2) + " u.m" +
+            "\nLado 2 duplicado: " + (t.getLado2() * 2) + " u.m"+
+            "\nLado 3 duplicado: " + (t.getLado3() * 2) + " u.m" +
+            "\nAltura duplicada: " + (t.getAltura() * 2) + " u.m"
+        );
+
         return 0;
     }
 
@@ -39,6 +47,13 @@ public class VisitorMaximizaArea implements VisitorIF {
     @Override
     public double visitaTrapezio(Trapezio t) {
 
+        System.out.print(
+            "Base maior duplicado: " + (t.getBaseMaior() * 2) + " u.m" +
+            "\nBase menor duplicado: " + (t.getBaseMenor() * 2) + " u.m"+
+            "\nLado 1 duplicado: " + (t.getLado1() * 2) + " u.m" +
+            "\nLado 2 duplicado: " + (t.getLado2() * 2) + " u.m" +
+            "\nAltura duplicada: " + (t.getAltura() * 2) + " u.m"
+        );
 
         return 0;
     }

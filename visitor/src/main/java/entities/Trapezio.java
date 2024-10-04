@@ -1,14 +1,17 @@
 package entities;
 
-public class Trapezio {
+import concrete.ElementoConcretoIF;
+import visitors.VisitorIF;
 
-    private int baseMaior;
-    private int baseMenor;
-    private  int altura;
+public class Trapezio implements ElementoConcretoIF {
 
-    private int lado1, lado2;
+    private double baseMaior;
+    private double baseMenor;
+    private  double altura;
 
-    public Trapezio(int baseMaior, int baseMenor, int altura, int lado1, int lado2) {
+    private double lado1, lado2;
+
+    public Trapezio(double baseMaior, double baseMenor, double altura, double lado1, double lado2) {
 
         if (
             baseMaior <= baseMenor ||
@@ -26,9 +29,13 @@ public class Trapezio {
         this.lado2 = lado2;
     }
 
+    public void aceitaVisita(VisitorIF v) {
+        v.visitaTrapezio(this);
+    }
+
     // Getters and Setters
 
-    public int getBaseMaior() {
+    public double getBaseMaior() {
         return baseMaior;
     }
 
@@ -36,7 +43,7 @@ public class Trapezio {
         this.baseMaior = baseMaior;
     }
 
-    public int getBaseMenor() {
+    public double getBaseMenor() {
         return baseMenor;
     }
 
@@ -44,7 +51,7 @@ public class Trapezio {
         this.baseMenor = baseMenor;
     }
 
-    public int getAltura() {
+    public double getAltura() {
         return altura;
     }
 
@@ -52,7 +59,7 @@ public class Trapezio {
         this.altura = altura;
     }
 
-    public int getLado1() {
+    public double getLado1() {
         return lado1;
     }
 
@@ -60,7 +67,7 @@ public class Trapezio {
         this.lado1 = lado1;
     }
 
-    public int getLado2() {
+    public double getLado2() {
         return lado2;
     }
 

@@ -5,9 +5,9 @@ import visitors.VisitorIF;
 
 public class Circulo implements ElementoConcretoIF {
 
-    private int raio;
+    private double raio;
 
-    public Circulo(int raio) {
+    public Circulo(double raio) {
 
         if ( raio <= 0 ) throw new IllegalArgumentException("Raio inválido!");
 
@@ -20,7 +20,7 @@ public class Circulo implements ElementoConcretoIF {
 
     // Getters and Setters
 
-    public int getRaio() {
+    public double getRaio() {
         return raio;
     }
 

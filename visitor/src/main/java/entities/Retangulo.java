@@ -6,10 +6,10 @@ import visitors.VisitorIF;
 
 public class Retangulo implements ElementoConcretoIF {
 
-    private  int altura;
-    private int ladoBase, lado2, lado3, lado4;
+    private double altura;
+    private double ladoBase, lado2, lado3, lado4;
 
-    public Retangulo(int ladoBase, int lado2, int lado3, int lado4, int altura) {
+    public Retangulo(double ladoBase, double lado2, double lado3, double lado4, double altura) {
 
         if (
             altura <= 0 ||
@@ -31,7 +31,7 @@ public class Retangulo implements ElementoConcretoIF {
     }
 
     // Getters and Setters
-    public int getAltura() {
+    public double getAltura() {
         return altura;
     }
 
@@ -39,7 +39,7 @@ public class Retangulo implements ElementoConcretoIF {
         this.altura = altura;
     }
 
-    public int getLadoBase() {
+    public double getLadoBase() {
         return ladoBase;
     }
 
@@ -47,7 +47,7 @@ public class Retangulo implements ElementoConcretoIF {
         this.ladoBase = ladoBase;
     }
 
-    public int getLado2() {
+    public double getLado2() {
         return lado2;
     }
 
@@ -55,7 +55,7 @@ public class Retangulo implements ElementoConcretoIF {
         this.lado2 = lado2;
     }
 
-    public int getLado3() {
+    public double getLado3() {
         return lado3;
     }
 
@@ -63,7 +63,7 @@ public class Retangulo implements ElementoConcretoIF {
         this.lado3 = lado3;
     }
 
-    public int getLado4() {
+    public double getLado4() {
         return lado4;
     }
 
