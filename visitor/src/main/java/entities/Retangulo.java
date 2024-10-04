@@ -1,29 +1,22 @@
 package entities;
 
-
 import concrete.ElementoConcretoIF;
 import visitors.VisitorIF;
 
 public class Retangulo implements ElementoConcretoIF {
 
     private double altura;
-    private double ladoBase, lado2, lado3, lado4;
+    private double largura;
 
-    public Retangulo(double ladoBase, double lado2, double lado3, double lado4, double altura) {
+    public Retangulo(double altura, double largura) {
 
         if (
             altura <= 0 ||
-            ladoBase <= 0 ||
-            lado2 <= 0 ||
-            lado3 <= 0 ||
-            lado4 <= 0
+            largura <= 0
         ) throw new IllegalArgumentException("Medidas inválidas!");
 
         this.altura = altura;
-        this.ladoBase = ladoBase;
-        this.lado2 = lado2;
-        this.lado3 = lado3;
-        this.lado4 = lado4;
+        this.largura = largura;
     }
 
     public void aceitaVisita(VisitorIF v) {
@@ -39,35 +32,13 @@ public class Retangulo implements ElementoConcretoIF {
         this.altura = altura;
     }
 
-    public double getLadoBase() {
-        return ladoBase;
+    public double getLargura() {
+        return largura;
     }
 
-    public void setLadoBase(int ladoBase) {
-        this.ladoBase = ladoBase;
+    public void setLargura(int largura) {
+        this.largura = largura;
     }
 
-    public double getLado2() {
-        return lado2;
-    }
 
-    public void setLado2(int lado2) {
-        this.lado2 = lado2;
-    }
-
-    public double getLado3() {
-        return lado3;
-    }
-
-    public void setLado3(int lado3) {
-        this.lado3 = lado3;
-    }
-
-    public double getLado4() {
-        return lado4;
-    }
-
-    public void setLado4(int lado4) {
-        this.lado4 = lado4;
-    }
 }

@@ -11,7 +11,7 @@ public class VisitorCalculaPerimetro implements VisitorIF {
 
     @Override
     public double visitaRetangulo(Retangulo r) {
-        double perimetro = (r.getLadoBase() + r.getLado2() + r.getLado3() + r.getLado4());
+        double perimetro = ((r.getLargura() * 2) + (r.getAltura() * 2));
 
         this.perimetro = perimetro;
 
@@ -22,7 +22,7 @@ public class VisitorCalculaPerimetro implements VisitorIF {
 
     @Override
     public double visitaTriangulo(Triangulo t) {
-        double perimetro = (t.getLadoBase() + t.getLado2() + t.getLado2());
+        double perimetro = (t.getBase() + t.getLado2() + t.getLado3());
 
         this.perimetro = perimetro;
 

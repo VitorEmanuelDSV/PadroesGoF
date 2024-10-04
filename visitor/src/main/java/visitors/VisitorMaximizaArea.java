@@ -11,10 +11,7 @@ public class VisitorMaximizaArea implements VisitorIF {
     public double visitaRetangulo(Retangulo r) {
 
         System.out.print(
-            "Lado Base duplicado: " + (r.getLadoBase() * 2) + " u.m" +
-            "\nLado 2 duplicado: " + (r.getLado2() * 2) + " u.m"+
-            "\nLado 3 duplicado: " + (r.getLado3() * 2) + " u.m" +
-            "\nLado 4 duplicado: " + (r.getLado4() * 2) + " u.m" +
+            "Largura duplicado: " + (r.getLargura() * 2) + " u.m" +
             "\nAltura duplicada: " + (r.getAltura() * 2) + " u.m"
         );
 
@@ -25,7 +22,7 @@ public class VisitorMaximizaArea implements VisitorIF {
     public double visitaTriangulo(Triangulo t) {
 
         System.out.print(
-            "Lado Base duplicado: " + (t.getLadoBase() * 2) + " u.m" +
+            "Lado Base duplicado: " + (t.getBase() * 2) + " u.m" +
             "\nLado 2 duplicado: " + (t.getLado2() * 2) + " u.m"+
             "\nLado 3 duplicado: " + (t.getLado3() * 2) + " u.m" +
             "\nAltura duplicada: " + (t.getAltura() * 2) + " u.m"

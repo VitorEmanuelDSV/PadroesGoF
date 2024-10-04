@@ -33,14 +33,11 @@ public class MainV {
         System.out.println("\n");
 
         // Retângulo
-        Retangulo retangulo = CreatorFiguras.createRetangulo(10, 5, 10, 2, 5);
+        Retangulo retangulo = CreatorFiguras.createRetangulo(10, 5);
 
         System.out.println(
             "- DADOS DO RETÂNGULO: \n" +
-                "Lado Base: " + retangulo.getLadoBase() + " u.m\n" +
-                "Lado 2: " + retangulo.getLado2() + " u.m\n" +
-                "Lado 3: " + retangulo.getLado3() + " u.m\n" +
-                "Lado 4: " + retangulo.getLado4() + " u.m\n" +
+                "Largura: " + retangulo.getLargura() + " u.m\n" +
                 "Altura: " + retangulo.getAltura() + " u.m"
         );
 
@@ -73,7 +70,7 @@ public class MainV {
 
         System.out.println(
             "- DADOS DO TRIÂNGULO: \n" +
-                "Lado Base: " + triangulo.getLadoBase() + " u.m\n" +
+                "Base: " + triangulo.getBase() + " u.m\n" +
                 "Lado 2: " + triangulo.getLado2() + " u.m\n" +
                 "Lado 3: " + triangulo.getLado3() + " u.m\n" +
                 "Altura: " + triangulo.getAltura() + " u.m"
