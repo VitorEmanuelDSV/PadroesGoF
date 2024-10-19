@@ -7,6 +7,8 @@
       <sourceFolder url="file://$MODULE_DIR$/fachada/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/visitor/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/visitor/test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/_factory" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/factory/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
