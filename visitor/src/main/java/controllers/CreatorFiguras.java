@@ -11,16 +11,16 @@ public class CreatorFiguras {
         return new Circulo(raio);
     }
 
-    public static Retangulo createRetangulo(double ladoBase, double lado2, double lado3, double lado4, double altura) {
-        return new Retangulo(ladoBase, lado2, lado3, lado4, altura);
+    public static Retangulo createRetangulo(double base, double altura) {
+        return new Retangulo(base, altura);
     }
 
     public static Trapezio createTrapezio(double baseMaior, double baseMenor, double altura, double lado1, double lado2) {
         return new Trapezio(baseMaior, baseMenor, altura, lado1, lado2);
     }
 
-    public static Triangulo createTriangulo(double ladoBase, double lado2, double lado3, double altura) {
-        return new Triangulo(ladoBase, lado2, lado3, altura);
+    public static Triangulo createTriangulo(double base, double lado2, double lado3, double altura) {
+        return new Triangulo(base, lado2, lado3, altura);
     }
 
 }

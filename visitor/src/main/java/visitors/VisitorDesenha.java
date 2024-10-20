@@ -11,7 +11,7 @@ public class VisitorDesenha implements VisitorIF {
     public double visitaRetangulo(Retangulo r) {
 
         for (int i = 0; i < r.getAltura(); i++) {
-            for (int j = 0; j < r.getLadoBase(); j++) {
+            for (int j = 0; j < r.getLargura(); j++) {
                 System.out.print("*");
             }
             System.out.println();

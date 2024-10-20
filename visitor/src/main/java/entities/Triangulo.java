@@ -5,25 +5,25 @@ import visitors.VisitorIF;
 
 public class Triangulo implements ElementoConcretoIF {
 
-    private double ladoBase, lado2, lado3;
+    private double base, lado2, lado3;
     private double altura;
 
-    public Triangulo(double ladoBase, double lado2, double lado3, double altura) {
+    public Triangulo(double base, double lado2, double lado3, double altura) {
 
         if (
-            ladoBase <= 0 ||
+            base <= 0 ||
             lado2 <= 0 ||
             lado3 <= 0 ||
             altura <= 0
         ) throw new IllegalArgumentException("Medidas inválidas!");
 
         if (
-            ladoBase + lado2 <= lado3 ||
-            ladoBase + lado3 <= lado2 ||
-            lado2 + lado3 <= ladoBase
+            base + lado2 <= lado3 ||
+            base + lado3 <= lado2 ||
+            lado2 + lado3 <= base
         ) throw new IllegalArgumentException("Triângulo inexistente!");
 
-        this.ladoBase = ladoBase;
+        this.base = base;
         this.lado2 = lado2;
         this.lado3 = lado3;
         this.altura = altura;
@@ -34,12 +34,12 @@ public class Triangulo implements ElementoConcretoIF {
     }
 
     // Getters and Setters
-    public double getLadoBase() {
-        return ladoBase;
+    public double getBase() {
+        return base;
     }
 
-    public void setLadoBase(int ladoBase) {
-        this.ladoBase = ladoBase;
+    public void setBase(int base) {
+        this.base = base;
     }
 
     public double getLado2() {

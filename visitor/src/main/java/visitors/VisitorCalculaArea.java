@@ -11,7 +11,7 @@ public class VisitorCalculaArea implements VisitorIF {
 
     @Override
     public double visitaRetangulo(Retangulo r) {
-        double area = (r.getLadoBase() * r.getAltura());
+        double area = (r.getLargura() * r.getAltura());
 
         this.area = area;
 
@@ -22,7 +22,7 @@ public class VisitorCalculaArea implements VisitorIF {
 
     @Override
     public double visitaTriangulo(Triangulo t) {
-        double area = ((t.getAltura() * t.getLadoBase()) / 2);
+        double area = ((t.getAltura() * t.getBase()) / 2);
 
         this.area = area;
 
