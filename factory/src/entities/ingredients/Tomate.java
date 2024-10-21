@@ -1,15 +1,11 @@
 package entities.ingredients;
 
-public class Tomate implements Ingredient {
+import contracts.IngredientIF;
 
-    private boolean hasTomate;
+public class Tomate implements IngredientIF {
 
-    public Tomate(boolean hasTomate) {
-        this.hasTomate = hasTomate;
-    }
-
+    @Override
     public String getType() {
-        return ("Tomate: " + (this.hasTomate ? "Sim" : "Não"));
+        return "Tomate \n";
     }
-
 }

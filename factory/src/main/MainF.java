@@ -1,19 +1,24 @@
 package main;
 
-import entities.builder.Sanduiche;
-import factory.SanduicheFactory;
+import contracts.SanduicheIF;
+import factory.SanduicheBasico;
+import factory.SanduicheFit;
+import factory.SanduichePodrao;
 
 public class MainF {
 
     public static void main(String[] args) {
+        SanduicheIF sanduicheBasico = new SanduicheBasico();
+        SanduicheIF sanduicheFit = new SanduicheFit();
+        SanduicheIF sanduichePodrao = new SanduichePodrao();
 
-        Sanduiche sanduiche1 = SanduicheFactory.getSanduiche("integral", "prato", "frango", "granja", true);
-        Sanduiche sanduiche2 = SanduicheFactory.getSanduiche("frances", "prato", "peru", "capoeira", true);
-        Sanduiche sanduiche3 = SanduicheFactory.getSanduiche("bola", "prato", "peru", "granja", false);
+        System.out.println("Sanduiche Básico: ");
+        System.out.println(sanduicheBasico.montarSanduiche());
 
-        System.out.println(sanduiche1.getSanduiche());
-        System.out.println(sanduiche2.getSanduiche());
-        System.out.println(sanduiche3.getSanduiche());
+        System.out.println("Sanduiche Fit: ");
+        System.out.println(sanduicheFit.montarSanduiche());
 
+        System.out.println("Sanduiche Podrão: ");
+        System.out.println(sanduichePodrao.montarSanduiche());
     }
 }
