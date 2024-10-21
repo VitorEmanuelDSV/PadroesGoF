@@ -1,7 +1,7 @@
 package factory;
 
 import contracts.*;
-import entities.ingredients.*;
+import entities.*;
 
 public class SanduicheBasico implements SanduicheIF {
 

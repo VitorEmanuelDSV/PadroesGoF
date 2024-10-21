@@ -1,4 +1,4 @@
-package entities.ingredients;
+package entities;
 
 import contracts.QueijoIF;
 

@@ -4,10 +4,10 @@ import contracts.OvoIF;
 import contracts.PaoIF;
 import contracts.PresuntoIF;
 import contracts.QueijoIF;
-import entities.ingredients.OvoCapoeira;
-import entities.ingredients.PaoIntegral;
-import entities.ingredients.PresuntoFrango;
-import entities.ingredients.QueijoPrato;
+import entities.OvoCapoeira;
+import entities.PaoIntegral;
+import entities.PresuntoFrango;
+import entities.QueijoPrato;
 
 public class SanduicheFit extends SanduicheBasico{
 
