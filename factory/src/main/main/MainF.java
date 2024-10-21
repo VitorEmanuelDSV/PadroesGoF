@@ -1,9 +1,9 @@
-package main;
+package main.main;
 
-import contracts.SanduicheIF;
-import factory.SanduicheBasico;
-import factory.SanduicheFit;
-import factory.SanduichePodrao;
+import main.contracts.SanduicheIF;
+import main.factory.SanduicheBasico;
+import main.factory.SanduicheFit;
+import main.factory.SanduichePodrao;
 
 public class MainF {
 

@@ -1,6 +1,6 @@
-package entities;
+package main.entities;
 
-import contracts.PaoIF;
+import main.contracts.PaoIF;
 
 public class PaoBola implements PaoIF {
 

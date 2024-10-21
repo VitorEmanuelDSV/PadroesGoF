@@ -1,6 +1,6 @@
-package entities;
+package main.entities;
 
-import contracts.IngredientIF;
+import main.contracts.IngredientIF;
 
 public class Tomate implements IngredientIF {
 

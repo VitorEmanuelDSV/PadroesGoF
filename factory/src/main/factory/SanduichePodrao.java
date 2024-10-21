@@ -1,9 +1,9 @@
-package factory;
+package main.factory;
 
-import contracts.PaoIF;
-import contracts.QueijoIF;
-import entities.PaoBola;
-import entities.QueijoCheddar;
+import main.contracts.PaoIF;
+import main.contracts.QueijoIF;
+import main.entities.PaoBola;
+import main.entities.QueijoCheddar;
 
 public class SanduichePodrao extends SanduicheBasico{
 

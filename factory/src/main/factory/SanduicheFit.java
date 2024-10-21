@@ -1,13 +1,7 @@
-package factory;
+package main.factory;
 
-import contracts.OvoIF;
-import contracts.PaoIF;
-import contracts.PresuntoIF;
-import contracts.QueijoIF;
-import entities.OvoCapoeira;
-import entities.PaoIntegral;
-import entities.PresuntoFrango;
-import entities.QueijoPrato;
+import main.contracts.*;
+import main.entities.*;
 
 public class SanduicheFit extends SanduicheBasico{
 

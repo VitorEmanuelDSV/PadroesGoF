@@ -1,6 +1,6 @@
-package entities;
+package main.entities;
 
-import contracts.OvoIF;
+import main.contracts.OvoIF;
 
 public class OvoCapoeira implements OvoIF {
 

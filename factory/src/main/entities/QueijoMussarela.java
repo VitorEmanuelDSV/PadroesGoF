@@ -1,6 +1,6 @@
-package entities;
+package main.entities;
 
-import contracts.QueijoIF;
+import main.contracts.QueijoIF;
 
 public class QueijoMussarela implements QueijoIF {
 

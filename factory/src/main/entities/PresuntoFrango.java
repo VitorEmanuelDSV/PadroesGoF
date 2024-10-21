@@ -1,6 +1,6 @@
-package entities;
+package main.entities;
 
-import contracts.PresuntoIF;
+import main.contracts.PresuntoIF;
 
 public class PresuntoFrango implements PresuntoIF {
 
