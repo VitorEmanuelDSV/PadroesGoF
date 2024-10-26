@@ -1,4 +1,4 @@
-package main.main;
+package main;
 
 import main.contracts.SanduicheIF;
 import main.factory.SanduicheBasico;
