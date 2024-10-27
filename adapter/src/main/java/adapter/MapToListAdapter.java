@@ -1,4 +1,6 @@
-package main;
+package java.adapter;
+
+import java.contracts.ListIF;
 
 import java.util.ArrayList;
 import java.util.Collection;

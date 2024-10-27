@@ -1,4 +1,9 @@
-package main;
+package java.main;
+
+import java.adapter.ListToMapAdapter;
+import java.adapter.MapToListAdapter;
+import java.contracts.ListIF;
+
 import java.util.*;
 
 public class MainCliente {

@@ -1,5 +1,4 @@
-package main;
-import java.util.ArrayList;
+package java.contracts;
 import java.util.Iterator;
 
 public interface ListIF<E> extends Iterator {

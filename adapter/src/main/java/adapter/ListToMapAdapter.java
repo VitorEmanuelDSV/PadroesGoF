@@ -1,4 +1,4 @@
-package main;
+package java.adapter;
 
 import java.util.Collection;
 import java.util.List;
