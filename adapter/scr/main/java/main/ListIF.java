@@ -2,7 +2,7 @@ package main;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public interface ListIF<E> {
+public interface ListIF<E> extends Iterator {
 
     boolean add(E e);
 

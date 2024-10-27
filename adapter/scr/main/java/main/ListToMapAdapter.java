@@ -12,15 +12,6 @@ public class ListToMapAdapter<K, V> implements Map<K, V> {
         this.list = list;
     }
 
-    public V put(Integer key, V value) {
-        if (key < list.size()) {
-            return list.set(key, value);
-        } else {
-            list.add(value);
-            return null;
-        }
-    }
-
     @Override
     public V get(Object key) {
         if (key instanceof Integer) {
@@ -32,8 +23,10 @@ public class ListToMapAdapter<K, V> implements Map<K, V> {
 
     @Override
     public V put(K key, V value) {
+        list.add(value);
         return null;
     }
+
 
     @Override
     public boolean containsKey(Object key) {

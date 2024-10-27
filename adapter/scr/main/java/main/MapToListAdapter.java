@@ -5,6 +5,8 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 
+import java.util.*;
+
 public class MapToListAdapter<K, V> implements ListIF<Map.Entry<K, V>> {
     private final Map<K, V> map;
 
@@ -26,8 +28,8 @@ public class MapToListAdapter<K, V> implements ListIF<Map.Entry<K, V>> {
     @Override
     public boolean contains(Object o) {
         if (o instanceof Map.Entry) {
-            Map.Entry<K, V> entry = (Map.Entry<K, V>) o;
-            return map.containsKey(entry.getKey()) && map.containsValue(entry.getValue());
+            Map.Entry<?, ?> entry = (Map.Entry<?, ?>) o;
+            return map.containsKey(entry.getKey()) && map.get(entry.getKey()).equals(entry.getValue());
         }
         return false;
     }
@@ -42,7 +44,8 @@ public class MapToListAdapter<K, V> implements ListIF<Map.Entry<K, V>> {
 
     @Override
     public Map.Entry<K, V> get(int index) {
-        return new ArrayList<>(map.entrySet()).get(index);
+        List<Map.Entry<K, V>> entries = new ArrayList<>(map.entrySet());
+        return entries.get(index);
     }
 
     @Override
@@ -58,8 +61,8 @@ public class MapToListAdapter<K, V> implements ListIF<Map.Entry<K, V>> {
     @Override
     public boolean remove(Object o) {
         if (o instanceof Map.Entry) {
-            Map.Entry<K, V> entry = (Map.Entry<K, V>) o;
-            return map.remove(entry.getKey(), entry.getValue());
+            Map.Entry<?, ?> entry = (Map.Entry<?, ?>) o;
+            return map.remove(entry.getKey()) != null;
         }
         return false;
     }
@@ -79,24 +82,16 @@ public class MapToListAdapter<K, V> implements ListIF<Map.Entry<K, V>> {
         return map.entrySet().toArray(a);
     }
 
-    // Métodos que não são mapeados diretamente, não estão em comum na list e no map
-
-    public void add(int index, Map.Entry<K, V> element) {
-        throw new UnsupportedOperationException("Not supported for MapToListAdapter.");
+    @Override
+    public boolean hasNext() {
+        return false;
     }
 
-    public boolean addAll(Collection<? extends Map.Entry<K, V>> c) {
-        throw new UnsupportedOperationException("Not supported for MapToListAdapter.");
+    @Override
+    public Object next() {
+        return null;
     }
-
-    public Map.Entry<K, V> remove(int index) {
-        throw new UnsupportedOperationException("Not supported for MapToListAdapter.");
-    }
-
-    public Map.Entry<K, V> set(int index, Map.Entry<K, V> element) {
-        throw new UnsupportedOperationException("Not supported for MapToListAdapter.");
-    }
-
-
 }
+
+
 
