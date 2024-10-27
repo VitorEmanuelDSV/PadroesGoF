@@ -25,7 +25,7 @@ class ListToMapAdapterTest {
     void getTest() {
         assertEquals("Primeiro", adapter.get(0));
         assertEquals("Segundo", adapter.get(1));
-        assertNull(adapter.get(2)); // Verifica para chave que não existe
+        assertNull(adapter.get(2));
     }
 
     @Test
@@ -45,15 +45,9 @@ class ListToMapAdapterTest {
     @Test
     void remove() {
         String removed = adapter.remove(1);
-        assertEquals("Segundo", removed); // Verifica o valor removido
-        assertFalse(adapter.containsKey(1)); // Chave não deve existir após remoção
-        assertNull(adapter.remove(2)); // Remove chave inexistente, retorna null
-    }
-
-    @Test
-    void putAll() {
-        // O método putAll não foi implementado, então não há ação aqui para testar.
-        // Caso deseje, adicione um teste com comportamento esperado no futuro.
+        assertEquals("Segundo", removed);
+        assertFalse(adapter.containsKey(1));
+        assertNull(adapter.remove(2));
     }
 
     @Test
@@ -65,21 +59,21 @@ class ListToMapAdapterTest {
 
     @Test
     void isEmpty() {
-        assertFalse(adapter.isEmpty()); // Lista não está vazia inicialmente
+        assertFalse(adapter.isEmpty());
         adapter.clear();
-        assertTrue(adapter.isEmpty()); // Lista fica vazia após clear
+        assertTrue(adapter.isEmpty());
     }
 
     @Test
     void clear() {
         adapter.clear();
-        assertEquals(0, adapter.size()); // Lista fica com tamanho 0
-        assertTrue(adapter.isEmpty()); // Verifica que lista está vazia
+        assertEquals(0, adapter.size());
+        assertTrue(adapter.isEmpty());
     }
 
     @Test
     void values() {
-        assertEquals(list, adapter.values()); // Verifica se values retorna a lista original
+        assertEquals(list, adapter.values());
     }
 
     @Test
