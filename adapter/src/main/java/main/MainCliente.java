@@ -1,8 +1,8 @@
-package java.main;
+package main;
 
-import java.adapter.ListToMapAdapter;
-import java.adapter.MapToListAdapter;
-import java.contracts.ListIF;
+import adapter.ListToMapAdapter;
+import adapter.MapToListAdapter;
+import contracts.ListIF;
 
 import java.util.*;
 

@@ -1,9 +1,8 @@
-package java.adapter;
+package adapter;
 
-import java.contracts.ListIF;
+import contracts.ListIF;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 

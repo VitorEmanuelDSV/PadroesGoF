@@ -1,4 +1,4 @@
-package java.contracts;
+package contracts;
 import java.util.Iterator;
 
 public interface ListIF<E> extends Iterator {
