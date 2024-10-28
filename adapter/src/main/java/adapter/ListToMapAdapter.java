@@ -1,11 +1,12 @@
 package adapter;
 
-import java.util.Collection;
+import contracts.MapIF;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class ListToMapAdapter<K, V> implements Map<K, V> {
+public class ListToMapAdapter<K, V> implements MapIF<K, V> {
     private final List<V> list;
 
     public ListToMapAdapter(List<V> list) {
@@ -49,13 +50,6 @@ public class ListToMapAdapter<K, V> implements Map<K, V> {
     }
 
     @Override
-    public void putAll(Map<? extends K, ? extends V> m) {
-        for (Map.Entry<? extends K, ? extends V> entry : m.entrySet()) {
-            list.add(entry.getValue());
-        }
-    }
-
-    @Override
     public int size() {
         return list.size();
     }
@@ -71,19 +65,8 @@ public class ListToMapAdapter<K, V> implements Map<K, V> {
     }
 
     @Override
-    public Collection<V> values() {
+    public List<V> values() {
         return list;
-    }
-
-    // Métodos que não são mapeados diretamente, não estão em comum na list e no map
-    @Override
-    public Set<K> keySet() {
-        throw new UnsupportedOperationException("Not supported for ListToMapAdapter.");
-    }
-
-    @Override
-    public Set<Entry<K, V>> entrySet() {
-        throw new UnsupportedOperationException("Not supported for ListToMapAdapter.");
     }
 
     @Override

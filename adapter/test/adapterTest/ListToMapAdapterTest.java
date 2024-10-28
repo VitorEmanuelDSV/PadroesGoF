@@ -77,16 +77,6 @@ class ListToMapAdapterTest {
     }
 
     @Test
-    void keySet() {
-        assertThrows(UnsupportedOperationException.class, adapter::keySet);
-    }
-
-    @Test
-    void entrySet() {
-        assertThrows(UnsupportedOperationException.class, adapter::entrySet);
-    }
-
-    @Test
     void containsValue() {
         assertTrue(adapter.containsValue("Primeiro"));
         assertTrue(adapter.containsValue("Segundo"));
