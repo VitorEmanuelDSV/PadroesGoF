@@ -1,42 +1,48 @@
 package listener;
 
-import source.Acento;
-import source.AcentoEvent;
+import entities.Assento;
+import source.AssentoEvent;
 
-public class PainelCentral implements AcentoListener{
+public class PainelCentral implements AssentoListener {
 
     @Override
-    public void comprouAcento(AcentoEvent e) {
+    public void comprouAssento(AssentoEvent e) {
         System.out.println("Comprou Acento");
     }
+
     @Override
-    public void reservouAcento(AcentoEvent e) {
+    public void mudouStatus(AssentoEvent e) {
+
+    }
+
+    @Override
+    public void reservouAssento(AssentoEvent e) {
         System.out.println("Reservou Acento");
     }
 
-    private Acento[][] acentos; // Matriz de assentos
+    private Assento[][] assentos; // Matriz de assentos
 
     public PainelCentral(int rows, int cols) {
-        acentos = new Acento[rows][cols];
+        assentos = new Assento[rows][cols];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                acentos[i][j] = new Acento();
+                assentos[i][j] = new Assento();
             }
         }
     }
 
     public void reservarAcento(int row, int col) {
-        acentos[row][col].reservarAcento();
+        assentos[row][col].reservarAcento();
     }
 
     public void comprarAcento(int row, int col) {
-        acentos[row][col].comprarAcento();
+        assentos[row][col].comprarAcento();
     }
 
     public void exibirStatusAcentos() {
-        for (int i = 0; i < acentos.length; i++) {
-            for (int j = 0; j < acentos[i].length; j++) {
-                String status = acentos[i][j].getStatus();
+        for (int i = 0; i < assentos.length; i++) {
+            for (int j = 0; j < assentos[i].length; j++) {
+                String status = assentos[i][j].getStatus();
                 switch (status) {
                     case "Disponível":
                         System.out.print("G "); // Verde para disponível

@@ -1,15 +1,19 @@
 package listener;
-import source.AcentoEvent;
-import source.Acento;
+import source.AssentoEvent;
 
-public class Quiosque implements AcentoListener {
+public class Quiosque implements AssentoListener {
     @Override
-    public void reservouAcento(AcentoEvent e) {
+    public void reservouAssento(AssentoEvent e) {
 
     }
 
     @Override
-    public void comprouAcento(AcentoEvent e) {
+    public void comprouAssento(AssentoEvent e) {
+
+    }
+
+    @Override
+    public void mudouStatus(AssentoEvent e) {
 
     }
 }

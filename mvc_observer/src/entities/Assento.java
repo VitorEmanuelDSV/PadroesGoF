@@ -1,14 +1,16 @@
-package source;
+package entities;
 
-import listener.AcentoListener;
+import listener.AssentoListener;
+import source.AssentoEvent;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Acento {
-    private List<AcentoListener> listeners = new ArrayList<>();
+public class Assento {
+    private List<AssentoListener> listeners = new ArrayList<>();
     private String status; //disponível reservado comprado
 
-    public Acento() {
+    public Assento() {
         this.status = "Disponível"; // no começo o assento está disponível
     }
 
@@ -27,34 +29,34 @@ public class Acento {
     }
 
     private void disparaReservarAcento() {
-        List<AcentoListener> al;
+        List<AssentoListener> al;
         synchronized (this) {
             al = new ArrayList<>(listeners);
         }
-        AcentoEvent evento = new AcentoEvent(this);
-        for (AcentoListener l : al) {
-            l.reservouAcento(evento);
+        AssentoEvent evento = new AssentoEvent(this);
+        for (AssentoListener l : al) {
+            l.reservouAssento(evento);
         }
     }
 
     private void disparaComprarAcento() {
-        List<AcentoListener> al;
+        List<AssentoListener> al;
         synchronized (this) {
             al = new ArrayList<>(listeners);
         }
-        AcentoEvent evento = new AcentoEvent(this);
-        for (AcentoListener l : al) {
-            l.comprouAcento(evento);
+        AssentoEvent evento = new AssentoEvent(this);
+        for (AssentoListener l : al) {
+            l.comprouAssento(evento);
         }
     }
 
-    public synchronized void addAcentoListener(AcentoListener listener) {
+    public synchronized void addAcentoListener(AssentoListener listener) {
         if (!listeners.contains(listener)) {
             listeners.add(listener);
         }
     }
 
-    public synchronized void removeAcentoListener(AcentoListener listener) {
+    public synchronized void removeAcentoListener(AssentoListener listener) {
         listeners.remove(listener);
     }
 }
