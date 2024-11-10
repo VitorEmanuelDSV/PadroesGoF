@@ -1,61 +1,51 @@
 package listener;
 
+import entities.Onibus;
 import entities.Assento;
-import source.AssentoEvent;
+import source.OnibusEvent;
 
-public class PainelCentral implements AssentoListener {
+import java.util.Arrays;
 
-    @Override
-    public void comprouAssento(AssentoEvent e) {
-        System.out.println("Comprou Acento");
+public class PainelCentral implements OnibusListener {
+
+    public static PainelCentral createPainel() {
+        return new PainelCentral();
     }
 
     @Override
-    public void mudouStatus(AssentoEvent e) {
+    public void mudouStatus(OnibusEvent e) {
 
-    }
+        Onibus onibus = (Onibus) e.getSource();
 
-    @Override
-    public void reservouAssento(AssentoEvent e) {
-        System.out.println("Reservou Acento");
-    }
+        String[][] assentos = new String[onibus.numeroDeAssentosX][onibus.numeroDeAssentosY];
 
-    private Assento[][] assentos; // Matriz de assentos
-
-    public PainelCentral(int rows, int cols) {
-        assentos = new Assento[rows][cols];
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                assentos[i][j] = new Assento();
-            }
+        for (String[] strings : assentos) {
+            Arrays.fill(strings, "G");
         }
-    }
 
-    public void reservarAcento(int row, int col) {
-        assentos[row][col].reservarAcento();
-    }
+        for(Assento assento : onibus.getAssentos()) {
 
-    public void comprarAcento(int row, int col) {
-        assentos[row][col].comprarAcento();
-    }
+            String charStatus = switch (assento.getStatus()) {
+                case "DISPONIVEL" -> "G";
+                case "RESERVADO" -> "Y";
+                case "INDISPONIVEL" -> "R";
+                default -> "";
+            };
 
-    public void exibirStatusAcentos() {
-        for (int i = 0; i < assentos.length; i++) {
-            for (int j = 0; j < assentos[i].length; j++) {
-                String status = assentos[i][j].getStatus();
-                switch (status) {
-                    case "Disponível":
-                        System.out.print("G "); // Verde para disponível
-                        break;
-                    case "Reservado":
-                        System.out.print("Y "); // Amarelo para reservado
-                        break;
-                    case "Comprado":
-                        System.out.print("R "); // Vermelho para comprado
-                        break;
-                }
+            assentos[assento.getPositionY()][assento.getPositionX()] = charStatus;
+        }
+
+        System.out.println("PAINEL CENTRAL");
+        for (String[] assento : assentos) {
+            for (String s : assento) {
+                System.out.print(s + " ");
             }
             System.out.println();
         }
+
+        System.out.println();
+
     }
+
+
 }

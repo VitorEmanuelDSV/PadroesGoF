@@ -1,41 +1,51 @@
 package main;
 
+import entities.Guiche;
 import entities.Onibus;
-import entities._Assento;
-import listener.PainelCentral;
 import entities.Assento;
-import listener._PainelCentral;
+import listener.Quiosque;
+import listener.PainelCentral;
 
 import java.util.ArrayList;
 
 public class MainObserver {
     public static void main(String[] args) {
-//        Assento assento = new Assento();
-//        PainelCentral painel = new PainelCentral(4, 4);
-//
-//        assento.addAcentoListener(painel);
-//        painel.comprarAcento(2,1);
-//        painel.comprarAcento(2,1);
-//        painel.exibirStatusAcentos();
 
-        _PainelCentral painel = new _PainelCentral();
+        // Data
+        Guiche guiche = new Guiche();
 
-        ArrayList<_Assento> assentos = new ArrayList<_Assento>();
-        _Assento assento = new _Assento(2, 1, 1);
-        System.out.println(assento.getId());
+        PainelCentral painel = PainelCentral.createPainel();
+        Quiosque quiosque1 = Quiosque.createQuiosque("Quiosque 1");
 
-        assentos.add(assento);
+        guiche.registraOnibus(Guiche.createOnibus(1, 4, 4));
 
-        Onibus onibus = new Onibus(assentos, 4, 4);
+        ArrayList<Assento> assentos = new ArrayList<Assento>();
 
-        assento.setOnibusListener(onibus);
+        Assento assento1 = guiche.getOnibusById(1).createAssento(1, 1, 1);
+        Assento assento2 = guiche.getOnibusById(1).createAssento(2, 1, 2);
+        Assento assento3 = guiche.getOnibusById(1).createAssento(3, 3, 3);
+        Assento assento4 = guiche.getOnibusById(1).createAssento(4, 1, 3);
 
-        onibus.addOnibusListener(painel);
+        assentos.add(assento1);
+        assentos.add(assento2);
+        assentos.add(assento3);
+        assentos.add(assento4);
 
-        assento.compraAssento();
+        for(Assento _assento : assentos) {
+            _assento.setAssentoListener(guiche.getOnibusById(1));
+        }
 
+        guiche.getOnibusById(1).addOnibusListener(painel);
+        guiche.getOnibusById(1).addOnibusListener(quiosque1);
 
+        // Methods
+        // O normal seria guiche.compraAssento(idOnibus, idAssento) mas coloquei direto mesmo pq não vi necessidade
 
+        assento1.reservaAssento();
+        assento1.disponibilizaAssento();
+        assento1.inativaAssento();
+
+        assento2.inativaAssento();
 
     }
 }

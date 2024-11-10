@@ -3,60 +3,69 @@ package entities;
 import listener.AssentoListener;
 import source.AssentoEvent;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Assento {
-    private List<AssentoListener> listeners = new ArrayList<>();
-    private String status; //disponível reservado comprado
 
-    public Assento() {
-        this.status = "Disponível"; // no começo o assento está disponível
+    private AssentoListener onibus;
+
+    private int id;
+    private int positionX;
+    private int positionY;
+    private String status; // DISPONIVEL | RESERVADO | INDISPONÍVEL
+
+    public Assento(int id, int x, int y) {
+        this.id = id;
+        this.positionX = x;
+        this.positionY = y;
+        this.status = "DISPONIVEL";
     }
 
+    public void reservaAssento() {
+        switch (this.status) {
+            case "DISPONIVEL" -> this.setStatus("RESERVADO");
+            case "RESERVADO" -> throw new IllegalArgumentException("O assento já está reservado!");
+            case "INDISPONIVEL" -> throw new IllegalArgumentException("O assento está indisponível!");
+        }
+    }
+
+    public void inativaAssento() {
+        this.setStatus("INDISPONIVEL");
+    }
+
+    public void disponibilizaAssento() {
+        this.setStatus("DISPONIVEL");
+    }
+
+    // Listener
+    public synchronized void setAssentoListener(AssentoListener listener) {
+        this.onibus = listener;
+    }
+
+    public synchronized void removeAssentoListener() {
+        this.onibus = null;
+    }
+
+    // Getters and Setters
     public String getStatus() {
         return status;
     }
 
-    public void reservarAcento() {
-        this.status = "Reservado";
-        disparaReservarAcento();
-    }
+    private void setStatus(String status) {
+        this.status = status;
 
-    public void comprarAcento() {
-        this.status = "Comprado";
-        disparaComprarAcento();
-    }
-
-    private void disparaReservarAcento() {
-        List<AssentoListener> al;
-        synchronized (this) {
-            al = new ArrayList<>(listeners);
-        }
         AssentoEvent evento = new AssentoEvent(this);
-        for (AssentoListener l : al) {
-            l.reservouAssento(evento);
-        }
+        onibus.mudouStatus(evento);
     }
 
-    private void disparaComprarAcento() {
-        List<AssentoListener> al;
-        synchronized (this) {
-            al = new ArrayList<>(listeners);
-        }
-        AssentoEvent evento = new AssentoEvent(this);
-        for (AssentoListener l : al) {
-            l.comprouAssento(evento);
-        }
+    public int getId() {
+        return this.id;
     }
 
-    public synchronized void addAcentoListener(AssentoListener listener) {
-        if (!listeners.contains(listener)) {
-            listeners.add(listener);
-        }
+    public int getPositionX() {
+        return positionX;
     }
 
-    public synchronized void removeAcentoListener(AssentoListener listener) {
-        listeners.remove(listener);
+    public int getPositionY() {
+        return positionY;
     }
+
 }
