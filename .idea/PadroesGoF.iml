@@ -14,6 +14,8 @@
       <sourceFolder url="file://$MODULE_DIR$/adapter/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/adapter/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/mvc_observer/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mvc_observer/src2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mvc_observer/tests" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
