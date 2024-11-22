@@ -16,6 +16,8 @@
       <sourceFolder url="file://$MODULE_DIR$/mvc_observer/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/mvc_observer/src2" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/mvc_observer/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/proxy/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/proxy/test" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
