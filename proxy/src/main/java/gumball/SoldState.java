@@ -2,7 +2,7 @@ package main.java.gumball;
 
 public class SoldState implements State {
 	private static final long serialVersionUID = 2L;
-    transient headfirst.designpatterns.proxy.gumball.GumballMachine gumballMachine;
+    transient main.java.gumball.GumballMachine gumballMachine;
  
     public SoldState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
