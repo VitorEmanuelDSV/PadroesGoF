@@ -14,3 +14,5 @@ public class MyRemoteImpl extends UnicastRemoteObject implements MyRemote {
         return "Server says, 'Hello World!'";
     }
 }
+
+
