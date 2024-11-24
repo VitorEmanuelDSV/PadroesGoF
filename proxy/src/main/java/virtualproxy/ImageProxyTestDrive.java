@@ -1,4 +1,4 @@
-package headfirst.designpatterns.proxy.virtualproxy;
+package main.java.virtualproxy;
 
 import java.net.*;
 import javax.swing.*;

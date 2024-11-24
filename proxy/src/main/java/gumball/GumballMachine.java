@@ -1,4 +1,4 @@
-package headfirst.designpatterns.proxy.gumball;
+package main.java.gumball;
 
 import java.rmi.*;
 import java.rmi.server.*;

@@ -1,4 +1,4 @@
-package headfirst.designpatterns.proxy.gumballmonitor;
+package main.java.gumballmonitor;
 
 public class GumballMachine {
 	State soldOutState;
